@@ -29,7 +29,7 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
-        const response = await fetch('http://localhost:4000/upload', {
+        const response = await fetch('https://zakzingbackend.onrender.com/upload', {
             method: 'POST',
             body: formData,
         });
@@ -38,7 +38,7 @@ const AddProduct = () => {
         if (responseData.success) {
             const product = { ...productDetails, image: responseData.image_url };
 
-            const addProductResponse = await fetch('http://localhost:4000/addproduct', {
+            const addProductResponse = await fetch('https://zakzingbackend.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
